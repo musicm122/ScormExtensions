@@ -6,10 +6,7 @@ Helper and Wrapper methods for working with [SCORM Cloud Service .Net Library](h
 ### Using the Library:
 
 #### Install via Nuget
-todo;
-
-#### Manual Install
-todo;
+>PM> Install-Package ScormHelper
 
 
 #### Examples
@@ -30,6 +27,6 @@ var registrations = RegistrationApi.GetAllRegistrationData();
 //get all registrations async
 var registrationsResultAsync = await GetAllRegistrationDataAsync();
 ```
-todo;
 ### Updates:
 
+11/17/2016 Init release

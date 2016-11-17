@@ -1,15 +1,16 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <package>
   <metadata>
     <!--*-->
     <id>$id$</id>
     <!--*-->
-    <version>$version$</version>
-    <title></title>
+    <version>1.0.0.0</version>
+    <title>
+    </title>
     <!--*-->
     <authors>$author$</authors>
     <owners>$author$</owners>
-<!--
+    <!--
     <licenseUrl></licenseUrl>
     <projectUrl></projectUrl>
     <iconUrl></iconUrl>
@@ -18,13 +19,14 @@
     <!--*-->
     <description>$description$</description>
     <!--*-->
-    <releaseNotes> </releaseNotes>
+    <releaseNotes>Initial&amp;#x0020;Release</releaseNotes>
     <copyright>$copyright$</copyright>
-    <tags> </tags>
+    <tags>
+    </tags>
     <dependencies>
-         <group targetFramework="net462">
-            <dependency id="RusticiSoftware.HostedEngine.Client" version="1.0.0" />
-         </group>
-      </dependencies>
+   <group targetFramework="net462">
+      <dependency id="RusticiSoftware.HostedEngine.Client" version="1.1.0.0" />
+   </group>
+</dependencies>
   </metadata>
 </package>
