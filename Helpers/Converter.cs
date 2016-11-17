@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace ScormApi.Helpers
 {
+    /// <summary>
+    /// Handles the parsing of raw scorm data into strongly typed collections
+    /// </summary>
     public static class Converter
     {
         public static IList<CourseData> ToCourseData(string courseListXml)

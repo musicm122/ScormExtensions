@@ -45,7 +45,6 @@ namespace ScormApi.Helpers
             }
             catch (Exception ex)
             {
-                //todo:add logging here
                 Debug.Write(ex.Message, "ScormApi.Helpers.RegistrationResultParser.ConvertToRegResult");
                 throw;
             }
