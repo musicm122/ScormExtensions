@@ -1,4 +1,5 @@
 ﻿using RusticiSoftware.HostedEngine.Client;
+using System.Diagnostics;
 
 namespace HackerFerret.ScormHelper.Api
 {
@@ -42,15 +43,27 @@ namespace HackerFerret.ScormHelper.Api
         /// <param name="secretKey"></param>
         public static void InitScormConfig(string origin = "", string appId = "", string secretKey = "")
         {
-            if (!IsInitialized || ScormCloud.Configuration == null)
+            try
             {
-                ScormCloud.Configuration = new Configuration(ScormServiceUrl, appId, secretKey, origin);
-                IsInitialized = true;
+                var hasValidKeys = !string.IsNullOrWhiteSpace(appId) && !string.IsNullOrWhiteSpace(secretKey);
+
+                if (hasValidKeys && (!IsInitialized || ScormCloud.Configuration == null))
+                {
+                    ScormCloud.Configuration = new Configuration(ScormServiceUrl, appId, secretKey, origin);
+                    IsInitialized = true;
+                }
+                //if (!KeysAreSet && hasValidKeys)
+                //{
+                //    SetKeys(appId, secretKey);
+                //}
             }
-            if (!KeysAreSet && !string.IsNullOrWhiteSpace(appId) && !string.IsNullOrWhiteSpace(secretKey))
+            catch (System.Exception ex)
             {
-                SetKeys(appId, secretKey);
+                Debug.WriteLine(ex.Message, "HackerFerret.ScormHelper.Api.InitScormConfig");
+                throw;
             }
+
+
         }
 
         /// <summary>

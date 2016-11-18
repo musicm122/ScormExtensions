@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using RusticiSoftware.HostedEngine.Client;
 using System.Threading.Tasks;
-
+using System.Diagnostics;
 
 namespace HackerFerret.ScormHelper.Api
 {
@@ -11,59 +11,110 @@ namespace HackerFerret.ScormHelper.Api
     {
         public static void ResetRegistration(string regId)
         {
-            Common.InitScormConfig();
-            ScormCloud.RegistrationService.ResetRegistration(regId);
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
+            {
+                ScormCloud.RegistrationService.ResetRegistration(regId);
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.ResetRegistration");
+                throw;
+            }
+
         }
 
         public static RegistrationSummary GetRegistrationSummary(string regId)
         {
-            Common.InitScormConfig();
-            var retval = ScormCloud.RegistrationService.GetRegistrationSummary(regId);
-            return retval;
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
+            {
+                var retval = ScormCloud.RegistrationService.GetRegistrationSummary(regId);
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationSummary");
+                throw;
+            }
+
         }
 
         public async static Task<RegistrationSummary> GetRegistrationSummaryAsync(string regId)
         {
-            Common.InitScormConfig();
-            var retval = await Task.Run<RegistrationSummary>(() =>
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
             {
-                return ScormCloud.RegistrationService.GetRegistrationSummary(regId);
-            });
-
-            return retval;
+                var retval = await Task.Run<RegistrationSummary>(() =>
+                {
+                    return ScormCloud.RegistrationService.GetRegistrationSummary(regId);
+                });
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationSummaryAsync");
+                throw;
+            }
         }
 
 
         public static async Task<RegistrationData> GetRegistrationDetailAsync(string regId)
         {
-            Common.InitScormConfig();
-            var retval = await Task.Run<RegistrationData>(() =>
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
             {
-                return ScormCloud.RegistrationService.GetRegistrationDetail(regId);
-            });
+                var retval = await Task.Run<RegistrationData>(() =>
+                {
+                    return ScormCloud.RegistrationService.GetRegistrationDetail(regId);
+                });
 
-            return retval;
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationDetailAsync");
+                throw;
+            }
+
         }
 
         public static void DeleteRegistration(string regId, bool deleteLatestOnlyFlag = false)
         {
-            Common.InitScormConfig();
-            ScormCloud.RegistrationService.DeleteRegistration(regId.ToString(), deleteLatestOnlyFlag);
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
+            {
+                ScormCloud.RegistrationService.DeleteRegistration(regId.ToString(), deleteLatestOnlyFlag);
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationDetailAsync");
+                throw;
+            }
+
         }
 
         public static string GetRegistrationResult(string regId)
         {
-            Common.InitScormConfig();
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
+            {
+                var retval = ScormCloud.RegistrationService.GetRegistrationResult(regId.ToString(), RegistrationResultsFormat.ACTIVITY);
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationResult");
+                throw;
+            }
 
-            var retval = ScormCloud.RegistrationService.GetRegistrationResult(regId.ToString(), RegistrationResultsFormat.ACTIVITY);
-            return retval;
         }
 
         public static bool ScormRegistrationRecordExistsInCloud(string regId)
         {
             var retval = true;
 
-            Common.InitScormConfig();
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
             try
             {
                 var regData = ScormCloud.RegistrationService.GetRegistrationDetail(regId.ToString());
@@ -71,6 +122,7 @@ namespace HackerFerret.ScormHelper.Api
             }
             catch (Exception)
             {
+
                 retval = false;
             }
 
@@ -79,19 +131,37 @@ namespace HackerFerret.ScormHelper.Api
 
         public static List<RegistrationData> GetAllRegistrationData()
         {
-            Common.InitScormConfig();
-            var retval = ScormCloud.RegistrationService.GetRegistrationList();
-            return retval.ToList();
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
+            {
+                var retval = ScormCloud.RegistrationService.GetRegistrationList();
+                return retval.ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetAllRegistrationData");
+                throw;
+            }
+
         }
 
         public async static Task<List<RegistrationData>> GetAllRegistrationDataAsync()
         {
-            Common.InitScormConfig();
-            var retval = await Task.Run<List<RegistrationData>>(() =>
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
             {
-                return ScormCloud.RegistrationService.GetRegistrationList().ToList();
-            });
-            return retval;
+                var retval = await Task.Run<List<RegistrationData>>(() =>
+                {
+                    return ScormCloud.RegistrationService.GetRegistrationList().ToList();
+                });
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetAllRegistrationDataAsync");
+                throw;
+            }
+
         }
 
 
@@ -107,19 +177,37 @@ namespace HackerFerret.ScormHelper.Api
         /// </remarks>
         public static PostbackInfo GetRegistrationPostbackUrl(string regId)
         {
-            Common.InitScormConfig();
-            var retval = ScormCloud.RegistrationService.GetPostbackInfo(regId);
-            return retval;
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
+            {
+                var retval = ScormCloud.RegistrationService.GetPostbackInfo(regId);
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationPostbackUrl");
+                throw;
+            }
+
         }
 
         public async static Task<PostbackInfo> GetRegistrationPostbackUrlAsync(string regId)
         {
-            Common.InitScormConfig();
-            var retval = await Task.Run<PostbackInfo>(() =>
+            global::HackerFerret.ScormHelper.Api.Common.InitScormConfig();
+            try
             {
-                return ScormCloud.RegistrationService.GetPostbackInfo(regId);
-            });
-            return retval;
+                var retval = await Task.Run<PostbackInfo>(() =>
+                {
+                    return ScormCloud.RegistrationService.GetPostbackInfo(regId);
+                });
+                return retval;
+            }
+            catch (Exception ex)
+            {
+                Debug.Write(ex.Message, "ScormHelper.Api.RegistrationApi.GetRegistrationPostbackUrlAsync");
+                throw;
+            }
+
         }
     }
 }

@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScormHelper", "ScormHelper.csproj", "{45029B54-ABDE-42F1-AA3F-3E03FE6F2554}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScormHelper.UnitTest", "..\ScormHelper.UnitTest\ScormHelper.UnitTest.csproj", "{D4D8FF83-CF33-414B-9642-5DCE18E274CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptRunner", "ScriptRunner\ScriptRunner.csproj", "{F1A2BAA7-FB34-4FE5-9BF2-497623F51FA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{45029B54-ABDE-42F1-AA3F-3E03FE6F2554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45029B54-ABDE-42F1-AA3F-3E03FE6F2554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45029B54-ABDE-42F1-AA3F-3E03FE6F2554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4D8FF83-CF33-414B-9642-5DCE18E274CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4D8FF83-CF33-414B-9642-5DCE18E274CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4D8FF83-CF33-414B-9642-5DCE18E274CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4D8FF83-CF33-414B-9642-5DCE18E274CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1A2BAA7-FB34-4FE5-9BF2-497623F51FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A2BAA7-FB34-4FE5-9BF2-497623F51FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A2BAA7-FB34-4FE5-9BF2-497623F51FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A2BAA7-FB34-4FE5-9BF2-497623F51FA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
