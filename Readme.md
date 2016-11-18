@@ -29,4 +29,6 @@ var registrationsResultAsync = await GetAllRegistrationDataAsync();
 ```
 ### Updates:
 
-11/17/2016 Init release
+- 11/17/2016: Init release
+- 11/18/2016: Fix issue with InitScormConfig
+
