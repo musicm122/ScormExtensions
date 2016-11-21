@@ -19,7 +19,8 @@ namespace HackerFerret.ScormHelper.Api
         /// <summary>
         /// Default Scorm Cloud Service Url
         /// </summary>
-        public static readonly string ScormServiceUrl = "https://cloud.scorm.com/EngineWebServices/";
+        public static readonly string ScormServiceRootUrl = "https://cloud.scorm.com/";
+        public static readonly string ScormServiceUrl = ScormServiceRootUrl+"/EngineWebServices/";
 
         /// <summary>
         /// Sets Api and Secret Keys required for connection to scorm cloud.

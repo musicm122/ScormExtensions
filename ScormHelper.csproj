@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HackerFerret.ScormHelper</RootNamespace>
     <AssemblyName>ScormHelper</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\CourseApi.cs" />
+    <Compile Include="Api\ReportApi.cs" />
     <Compile Include="Extensions\CourseExtensions.cs" />
     <Compile Include="Extensions\RegistrationExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
