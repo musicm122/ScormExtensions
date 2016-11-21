@@ -32,4 +32,5 @@ var registrationsResultAsync = await GetAllRegistrationDataAsync();
 - 11/17/2016: Init release
 - 11/18/2016: Fix issue with InitScormConfig
 - 11/21/2016: Added ToFormattedString and ToCSVString extension methods to Courses and Registrations.
+- 11/21/2016: Added Reporting api call GetReportUrl
 
