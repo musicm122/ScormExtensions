@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\CourseApi.cs" />
+    <Compile Include="Extensions\CourseExtensions.cs" />
+    <Compile Include="Extensions\RegistrationExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\Converter.cs" />
     <Compile Include="Helpers\RegistrationResultParser.cs" />
