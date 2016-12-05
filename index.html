@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Scorm Extensions by musicm122</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Scorm Extensions</h1>
+        <p>Extension methods for working with the SCORM Cloud Service .Net Library</p>
+
+        <p class="view"><a href="https://github.com/musicm122/ScormExtensions">View the Project on GitHub <small>musicm122/ScormExtensions</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/musicm122/ScormExtensions/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/musicm122/ScormExtensions/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/musicm122/ScormExtensions">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="scorm-extensions" class="anchor" href="#scorm-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scorm Extensions</h1>
+
+<h3>
+<a id="about" class="anchor" href="#about" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About:</h3>
+
+<p>Extension methods for working with <a href="https://github.com/RusticiSoftware/SCORMCloud_NetLibrary">SCORM Cloud Service .Net Library</a></p>
+
+<h3>
+<a id="using-the-library" class="anchor" href="#using-the-library" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using the Library:</h3>
+
+<h4>
+<a id="install-via-nuget" class="anchor" href="#install-via-nuget" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install via Nuget</h4>
+
+<blockquote>
+<p>PM&gt; Install-Package ScormExtensions</p>
+</blockquote>
+
+<h4>
+<a id="extension-methods" class="anchor" href="#extension-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extension Methods</h4>
+
+<div class="highlight highlight-source-cs"><pre><span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">RegistrationServiceExtensions</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;List&lt;RegistrationData&gt;&gt; GetAllRegistrationDataAsync(this RegistrationService service)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;RegistrationData&gt; GetRegistrationDetailAsync(this RegistrationService service, string regId)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;PostbackInfo&gt; GetRegistrationPostbackUrlAsync(this RegistrationService service, string regId)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;RegistrationSummary&gt; GetRegistrationSummaryAsync(this RegistrationService service, string regId)
+<span class="pl-k">public</span> <span class="pl-k">static</span> bool ScormRegistrationRecordExistsInCloud(this RegistrationService service, string regId)
+
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">CourseServiceExtensions</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;CourseData&gt; GetCourseDetailsAsync(this CourseService CourseServiceInstance, string courseSeq)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;List&lt;CourseData&gt;&gt; GetCourseDetailListAsync(this CourseService CourseServiceInstance)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;string&gt; GetCoursePreviewUrlAsync(this CourseService CourseServiceInstance, string courseSeq, string redirectOnExitUrl = "")
+<span class="pl-k">public</span> <span class="pl-k">static</span> string GetCourseTitle(this CourseService CourseServiceInstance, string courseSeq)
+<span class="pl-k">public</span> <span class="pl-k">static</span> CourseData GetCourseDetails(this CourseService CourseServiceInstance, string courseSeq)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;string&gt; GetCourseTitleAsync(this CourseService CourseServiceInstance, string courseId)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task DeleteCourseAsync(this CourseService CourseServiceInstance, string courseSeq)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;bool&gt; CourseExistsAsync(this CourseService CourseServiceInstance, string courseSeq)
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">async</span> Task&lt;bool&gt; UploadCourseAsync(this CourseService CourseServiceInstance, string zipPath, string domain)
+
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">ReportingServiceExtensions</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> string GetReportUrl(this ReportingService service, string applicationId)
+
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">RegistrationExtensions</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToFormattedString(this RegistrationData data)
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToCSVString(this RegistrationData data)
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToCSVString(this List&lt;RegistrationData&gt; dataList)
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToCSVString(this List&lt;InstanceData&gt; InstanceData)
+
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">CourseExtensions</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToFormattedString(this CourseData data)
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToCSVString(this CourseData data)
+<span class="pl-k">public</span> <span class="pl-k">static</span> string ToCSVString(this List&lt;CourseData&gt; dataList)
+
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">StringExtensions</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> bool IsNumericString(this string val)
+<span class="pl-k">public</span> <span class="pl-k">static</span> bool IsDateString(this string val)
+<span class="pl-k">public</span> <span class="pl-k">static</span> bool IsValidUrl(string url)
+
+<span class="pl-k">public</span> <span class="pl-k">static</span> <span class="pl-k">class</span> <span class="pl-en">Converter</span>
+<span class="pl-k">public</span> <span class="pl-k">static</span> RegistrationResult ToRegistrationResult(string xmlVal)
+<span class="pl-k">public</span> <span class="pl-k">static</span> IList&lt;CourseData&gt; ToCourseData(string courseListXml)
+<span class="pl-k">public</span> <span class="pl-k">static</span> IList&lt;RegistrationData&gt; ToRegistrationData(string xmlVal)</pre></div>
+
+<h3>
+<a id="updates" class="anchor" href="#updates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Updates:</h3>
+
+<ul>
+<li>12/5/2016: Init release</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/musicm122">musicm122</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
